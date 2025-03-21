@@ -1,0 +1,7 @@
+*.log
+.DS_Store
+Thumbs.db
+__pycache__/
+.black*
+.isort.cfg
+venv

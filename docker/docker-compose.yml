@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: api-mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mysql
+      MYSQL_DATABASE: docker-orchestrator
+      MYSQL_ROOT_PASSWORD: mysql
+      TZ: "Africa/Nairobi"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - mysqldb:/var/lib/mysql
+
+volumes:
+  mysqldb:
